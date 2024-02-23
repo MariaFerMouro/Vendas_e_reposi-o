@@ -58,6 +58,19 @@ for k,v in quantidades.items():
     if contador > 1 and v > maior:
         prodmvend = k
         maior = v
+#Analisa qual produto mais faturou
+preco = {'televisão': 2500 * televisao, 'Iphone': 5300 * iphone, 'Notebook': 3500 * notebook, 'Smartwatch' : 1400 * smartwatch, 'Tablet': 1600 * tablet, 'camera': 2100 * camera, 'android': 3400 * android}
+caro = 0
+prodcaro = 0
+cont = 0
+for n, o in preco.items():
+    cont += 1
+    if cont == 0:
+        caro = o
+        prodcaro = n
+    if cont > 0 and o >caro:
+        caro = o
+        prodcaro = n
 print(f'O produto mais vendido: {prodmvend} com {maior}'
-      '\nO produto que mais faturou: {}'
+      f'\nO produto que mais faturou: {prodcaro} com R${caro},00'
       '\nLoja que mais vendeu: {}')
